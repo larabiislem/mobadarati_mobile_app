@@ -1,11 +1,22 @@
-import { View , Text} from "react-native";
+import { View , StyleSheet} from "react-native";
+import Login_screen from "@/Screens/login";
+
 
 export default function App() {
   return (
-    <View>
-      <Text>Home Screen</Text>
+    <View style={styles.container}>
+      
+      <Login_screen/>
+       
     </View>
    
   );
 }
 
+const styles= StyleSheet.create(
+  {
+    container:{
+      flex:1,
+    }
+  }
+)
