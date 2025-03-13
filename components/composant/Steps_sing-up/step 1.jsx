@@ -5,7 +5,7 @@ import Volunteer from  '../../../assets/images/image 9.png';
 import Assosiation from '../../../assets/images/image 10.png';
 import check from '../../../assets/images/image 10 (2).png';
 
-const AccountSelectionScreen = () => {
+const AccountSelectionScreen = ({nav}) => {
   const [selected, setSelected] = useState('volunteer1');
 
   return (
@@ -39,7 +39,7 @@ const AccountSelectionScreen = () => {
         {selected === 'volunteer2' && <Image source={check} style={styles.check}/>}
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.nextButton}>
+      <TouchableOpacity style={styles.nextButton} onPress={() => nav.navigate('Step2')}>
         <Text style={styles.nextButtonText}>Next</Text>
       </TouchableOpacity>
     </View>
@@ -67,6 +67,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     flexDirection:'row',
     borderColor: '#000',
+    paddingRight:50
   },
   selected: {
     backgroundColor: '#962728',
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
   check: {
     
     position: 'absolute',
-    right: 20,
+    right: 10,
     top: 30,
     
   },

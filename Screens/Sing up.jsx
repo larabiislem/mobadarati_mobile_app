@@ -3,7 +3,8 @@ import { View, Text, Button, StyleSheet } from 'react-native';
 import ProgressBar from 'react-native-progress/Bar'; // Importing ProgressBar from react-native-progress
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
+import AccountSelectionScreen from '@/components/composant/Steps_sing-up/step 1';
+//<Button title="Next" onPress={() => navigation.navigate('Step2')}
 // Step 1: First Screen
 const Step1 = ({ navigation }) => {
   return (
@@ -13,7 +14,8 @@ const Step1 = ({ navigation }) => {
       borderWidth={0}
       />
       <Text style={styles.step_text}>Step 1/3</Text>
-      <Button title="Next" onPress={() => navigation.navigate('Step2')} />
+      
+     <AccountSelectionScreen nav={navigation}/>
     </View>
   );
 };
@@ -54,9 +56,9 @@ const Singe = () => {
   return (
     
       <Stack.Navigator screenOptions={{headerShown:false}}>
-        <Stack.Screen name="Step1" component={Step1} />
-        <Stack.Screen name="Step2" component={Step2} />
-        <Stack.Screen name="Step3" component={Step3} />
+        <Stack.Screen name="Step1" component={Step1} options={{cardStyle: { backgroundColor:"white"}}} />
+        <Stack.Screen name="Step2" component={Step2} options={{cardStyle: { backgroundColor:"white"}}}/>
+        <Stack.Screen name="Step3" component={Step3} options={{cardStyle: { backgroundColor:"white"}}}/>
         
       </Stack.Navigator>
   );
