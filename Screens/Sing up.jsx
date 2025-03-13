@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import AccountSelectionScreen from '@/components/composant/Steps_sing-up/step 1';
 import SkillsSelectionScreen from '@/components/composant/Steps_sing-up/step 2';
+import SignUpScreen from '@/components/composant/Steps_sing-up/step3';
 //<Button title="Next" onPress={() => navigation.navigate('Step2')}
 // <Button title="Next" onPress={() => navigation.navigate('Step3')} />
 // Step 1: First Screen
@@ -45,8 +46,7 @@ const Step3 = ({ navigation }) => {
       <ProgressBar progress={1} width={300} height={10} color="#417FFC" unfilledColor = "#D9D9D9" 
       borderWidth={0} />
       <Text style={styles.step_text} >Step 3/3</Text>
-      
-      <Button title="Back" onPress={() => navigation.goBack()} />
+      <SignUpScreen/>
     </View>
   );
 };
