@@ -1,7 +1,7 @@
 import { View , StyleSheet, Text,KeyboardAvoidingView} from "react-native";
 import Title from "@/components/composant/title";
 import Input from "@/components/composant/input_data";
-import PrimaryButton from "@/components/Sing in Button";
+import PrimaryButton from "@/components/composant/Sing in Button";
 
 export default function Login_screen() {
   return (
