@@ -55,7 +55,7 @@ const Step3 = ({ navigation }) => {
 // Create a Stack Navigator
 const Stack = createStackNavigator();
 
-const Singe = () => {
+const Sign_up = () => {
   return (
     
       <Stack.Navigator screenOptions={{headerShown:false}}>
@@ -83,4 +83,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Singe;
+export default Sign_up;

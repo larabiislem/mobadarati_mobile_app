@@ -2,8 +2,17 @@ import { View , StyleSheet, Text,KeyboardAvoidingView} from "react-native";
 import Title from "@/components/composant/title";
 import Input from "@/components/composant/input_data";
 import PrimaryButton from "@/components/composant/Sing in Button";
+import { useNavigation } from "@react-navigation/native";
+
 
 export default function Login_screen() {
+
+  const Navigator = useNavigation();
+  function Singuphandller() {
+    Navigator.navigate('Sign_up')
+    
+  }
+
   return (
     <View style={styles.container}>
        <Title> Welcome back !</Title>
@@ -18,7 +27,7 @@ export default function Login_screen() {
         </View>
         <View style={styles.ask_container}>
         <Text style={styles.ask_text}>Do you have an acount? </Text>
-        <Text style={styles.sing_up_link}>Sing up</Text>
+        <Text style={styles.sing_up_link} onPress={Singuphandller}>Sing up</Text>
 
         </View>
         
