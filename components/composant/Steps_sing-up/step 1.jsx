@@ -1,30 +1,42 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet ,Image } from 'react-native';
+import Title from '../title';
+import Volunteer from  '../../../assets/images/image 9.png';
+import Assosiation from '../../../assets/images/image 10.png';
+import check from '../../../assets/images/image 10 (2).png';
 
 const AccountSelectionScreen = () => {
   const [selected, setSelected] = useState('volunteer1');
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Create an account</Text>
+      <Title>Create an account</Title>
       <Text style={styles.subtitle}>Which type of account would you like?</Text>
 
       <TouchableOpacity 
         style={[styles.option, selected === 'volunteer1' ? styles.selected : null]} 
         onPress={() => setSelected('volunteer1')}
       >
-        <Text style={styles.optionText}>Volunteer</Text>
+       <Image source={Volunteer} />
+       <View style={styles.text_container}>
+       <Text style={styles.optionText}>Volunteer</Text>
         <Text style={styles.optionSubText}>I'm looking to volunteer</Text>
-        {selected === 'volunteer1' && <Text style={styles.checkmark}>✔</Text>}
+       
+
+       </View>
+       {selected === 'volunteer1' && <Image source={check} style={styles.check}/>}
       </TouchableOpacity>
 
       <TouchableOpacity 
         style={[styles.option, selected === 'volunteer2' ? styles.selected : null]} 
         onPress={() => setSelected('volunteer2')}
       >
-        <Text style={styles.optionText}>Volunteer</Text>
+        <Image source={Assosiation} />
+        <View style={styles.text_container}>
+        <Text style={styles.optionText}>Assosiation</Text>
         <Text style={styles.optionSubText}>I'm looking to volunteer</Text>
-        {selected === 'volunteer2' && <Text style={styles.checkmark}>✔</Text>}
+        </View>
+        {selected === 'volunteer2' && <Image source={check} style={styles.check}/>}
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.nextButton}>
@@ -41,14 +53,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fff',
   },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
   subtitle: {
-    fontSize: 16,
+    marginTop:-60,
+    fontSize: 20,
     marginBottom: 20,
+    color:"#7D838B"
   },
   option: {
     width: '80%',
@@ -56,12 +65,12 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 10,
     marginBottom: 15,
-    alignItems: 'center',
+    flexDirection:'row',
     borderColor: '#000',
   },
   selected: {
-    backgroundColor: '#B22222',
-    borderColor: '#B22222',
+    backgroundColor: '#962728',
+    borderColor: '#962728',
   },
   optionText: {
     fontSize: 18,
@@ -69,14 +78,14 @@ const styles = StyleSheet.create({
   },
   optionSubText: {
     fontSize: 14,
+    color:"#7D838B"
   },
-  checkmark: {
-    fontSize: 20,
+  check: {
+    
     position: 'absolute',
     right: 20,
-    top: '50%',
-    transform: [{ translateY: -10 }],
-    color: 'white',
+    top: 30,
+    
   },
   nextButton: {
     marginTop: 20,
@@ -90,6 +99,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
+  text_container:{
+    flexDirection:'column',
+    marginLeft: 10
+  }
 });
 
 export default AccountSelectionScreen;
