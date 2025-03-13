@@ -4,8 +4,11 @@ import ProgressBar from 'react-native-progress/Bar'; // Importing ProgressBar fr
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import AccountSelectionScreen from '@/components/composant/Steps_sing-up/step 1';
+import SkillsSelectionScreen from '@/components/composant/Steps_sing-up/step 2';
 //<Button title="Next" onPress={() => navigation.navigate('Step2')}
+// <Button title="Next" onPress={() => navigation.navigate('Step3')} />
 // Step 1: First Screen
+//<Button title="Next" onPress={() => navigation.navigate('Step4')} />
 const Step1 = ({ navigation }) => {
   return (
     <View style={styles.container}>
@@ -28,8 +31,8 @@ const Step2 = ({ navigation }) => {
       <ProgressBar progress={0.6} width={300} height={10} color="#417FFC"unfilledColor = "#D9D9D9" 
       borderWidth={0} />
       <Text style={styles.step_text}>Step 2/3 </Text>
-      <Button title="Next" onPress={() => navigation.navigate('Step3')} />
-      <Button title="Back" onPress={() => navigation.goBack()} />
+      <SkillsSelectionScreen nav={navigation}/>
+     
     </View>
   );
 };
@@ -42,7 +45,7 @@ const Step3 = ({ navigation }) => {
       <ProgressBar progress={1} width={300} height={10} color="#417FFC" unfilledColor = "#D9D9D9" 
       borderWidth={0} />
       <Text style={styles.step_text} >Step 3/3</Text>
-      <Button title="Next" onPress={() => navigation.navigate('Step4')} />
+      
       <Button title="Back" onPress={() => navigation.goBack()} />
     </View>
   );

@@ -2,14 +2,19 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, TextInput ,Image} from 'react-native';
 import Title from '../title';
 import check from '../../../assets/images/image 10 (2).png';
+import Cooking from '../../../assets/images/image 22.png';
+import Delivery from '../../../assets/images/image 23.png';
+import Waiter from '../../../assets/images/image 24.png';
+import Wash_Dishes from '../../../assets/images/image 25.png';
+import { KeyboardAvoidingView } from 'react-native';
 
-const SkillsSelectionScreen = () => {
+const SkillsSelectionScreen = ( {nav}) => {
   const [selectedSkills, setSelectedSkills] = useState([]);
   const skills = [
-    { name: 'Cooking', color: '#D9D9D9' },
-    { name: 'Delivery', color: '#D9D9D9' },
-    { name: 'Waiter', color: '#D9D9D9' },
-    { name: 'Wash Dishes', color: '#D9D9D9' },
+    { name: 'Cooking', color: '#D9D9D9' , img : Cooking},
+    { name: 'Delivery', color: '#D9D9D9' ,img : Delivery },
+    { name: 'Waiter', color: '#D9D9D9', img : Waiter },
+    { name: 'Wash Dishes', color: '#D9D9D9', img : Wash_Dishes },
   ];
 
   const toggleSkill = (skillName) => {
@@ -22,6 +27,7 @@ const SkillsSelectionScreen = () => {
 
   return (
     <View style={styles.container}>
+        
       < Title >Your skills</Title>
       <Text style={styles.subtitle}>Select your skills</Text>
 
@@ -31,20 +37,29 @@ const SkillsSelectionScreen = () => {
           style={[styles.option, selectedSkills.includes(skill.name) ? styles.selected : { backgroundColor: skill.color }]}
           onPress={() => toggleSkill(skill.name)}
         >
+            <View style={styles.inner_container}>
+            <Image source={skill.img}/>
           <Text style={[styles.optionText, selectedSkills.includes(skill.name) ? { color: 'white' } : { color: 'black' }]}>{skill.name}</Text>
           {selectedSkills.includes(skill.name) && <Image source={check} style={styles.check}/>}
+
+            </View>
+       
         </TouchableOpacity>
       ))}
-
+    <KeyboardAvoidingView>
       <TextInput 
         style={styles.textInput} 
         placeholder="Anything to add ?" 
         placeholderTextColor="#666"
       />
-
-      <TouchableOpacity style={styles.nextButton}>
+      </KeyboardAvoidingView>
+    
+    <TouchableOpacity style={styles.nextButton} onPress={() => nav.navigate('Step3')}>
         <Text style={styles.nextButtonText}>Next</Text>
       </TouchableOpacity>
+
+    
+      
     </View>
   );
 };
@@ -68,11 +83,11 @@ const styles = StyleSheet.create({
     marginTop:-70
   },
   option: {
-    width: '80%',
-    padding: 20,
+    width: 350,
+    padding: 10,
     borderRadius: 10,
     marginBottom: 15,
-    alignItems: 'center',
+    
   },
   selected: {
     backgroundColor: '#B22222',
@@ -81,14 +96,15 @@ const styles = StyleSheet.create({
   optionText: {
     fontSize: 18,
     fontWeight: 'bold',
+    marginLeft:20
   },
   check: {
     position: 'absolute',
     right: 20,
-    top: 15,
+    top: 10,
   },
   textInput: {
-    width: '80%',
+    width: 350,
     height: 60,
     borderColor: '#ccc',
     borderWidth: 1,
@@ -108,6 +124,13 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
+  inner_container:
+  {
+    flexDirection:'row',
+    alignItems:'center',
+    
+
+  }
 });
 
 export default SkillsSelectionScreen;
