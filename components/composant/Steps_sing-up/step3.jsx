@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
-import { ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Alert, ScrollView } from 'react-native';
+import { Picker } from '@react-native-picker/picker'; // Import Picker from the new package
 import Input from '../input_data';
 
 const SignUpScreen = ({ selectedSkills }) => {
@@ -13,10 +13,10 @@ const SignUpScreen = ({ selectedSkills }) => {
     dateOfBirth: '',
     nationalCardNumber: '',
     city: '',
-    availability: '',
+    availability: [],
     volunteerType: '',
     specialToken: '',
-    location: '', // Add location field
+    location: '',
   });
 
   const [isAdult, setIsAdult] = useState(false);
@@ -29,16 +29,32 @@ const SignUpScreen = ({ selectedSkills }) => {
     });
   };
 
+  const handleAvailabilityChange = (value) => {
+    const updatedAvailability = formState.availability.includes(value)
+      ? formState.availability.filter((item) => item !== value)
+      : [...formState.availability, value];
+    setFormState({
+      ...formState,
+      availability: updatedAvailability,
+    });
+  };
+
   const handleSignUp = async () => {
-    const { password, confirmPassword, specialToken } = formState;
+    const { password, confirmPassword, specialToken, availability, volunteerType } = formState;
 
     if (password !== confirmPassword) {
       Alert.alert('Error', 'Passwords do not match');
       return;
     }
 
-    if (!specialToken) {
-      Alert.alert('Error', 'Special token is required');
+   
+    if (availability.length === 0) {
+      Alert.alert('Error', 'Please select at least one availability option');
+      return;
+    }
+
+    if (!volunteerType) {
+      Alert.alert('Error', 'Please select a volunteer type');
       return;
     }
 
@@ -61,7 +77,7 @@ const SignUpScreen = ({ selectedSkills }) => {
           availability,
           volunteerType,
           city,
-          location, // Include location in the request body
+          location,
           specialToken,
         }),
       });
@@ -87,9 +103,39 @@ const SignUpScreen = ({ selectedSkills }) => {
         <Input name="Date of Birth (YYYY-MM-DD)" value={formState.dateOfBirth} handller={(value) => handleInputChange('dateOfBirth', value)} />
         <Input name="National Card Number" value={formState.nationalCardNumber} handller={(value) => handleInputChange('nationalCardNumber', value)} />
         <Input name="City" value={formState.city} handller={(value) => handleInputChange('city', value)} />
-        <Input name="Location" value={formState.location} handller={(value) => handleInputChange('location', value)} /> {/* Add location input */}
-        <Input name="Availability" value={formState.availability} handller={(value) => handleInputChange('availability', value)} />
-        <Input name="Volunteer Type" value={formState.volunteerType} handller={(value) => handleInputChange('volunteerType', value)} />
+        <Input name="Location" value={formState.location} handller={(value) => handleInputChange('location', value)} />
+
+        {/* Availability Input */}
+        <View style={styles.inputContainer}>
+          <Text style={styles.label}>Availability</Text>
+          {["morning", "afternoon", "evening"].map((option) => (
+            <TouchableOpacity
+              key={option}
+              style={[
+                styles.availabilityOption,
+                formState.availability.includes(option) && styles.selectedAvailability,
+              ]}
+              onPress={() => handleAvailabilityChange(option)}
+            >
+              <Text style={styles.availabilityText}>{option}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+
+        {/* Volunteer Type Input */}
+        <View style={styles.inputContainer}>
+          <Text style={styles.label}>Volunteer Type</Text>
+          <Picker
+            selectedValue={formState.volunteerType}
+            style={styles.picker}
+            onValueChange={(value) => handleInputChange('volunteerType', value)}
+          >
+            <Picker.Item label="Select Volunteer Type" value="" />
+            <Picker.Item label="Independent" value="independent" />
+            <Picker.Item label="Association Member" value="association_member" />
+          </Picker>
+        </View>
+
         <Input name="Special Token" value={formState.specialToken} handller={(value) => handleInputChange('specialToken', value)} secureTextEntry />
 
         <View>
@@ -138,25 +184,33 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     padding: 20,
   },
-  stepText: {
-    color: '#4169E1',
-    marginTop: 5,
+  inputContainer: {
+    width: '90%',
+    marginVertical: 10,
   },
-  avatarContainer: {
+  label: {
+    fontSize: 16,
+    marginBottom: 10,
+  },
+  availabilityOption: {
+    padding: 10,
+    borderWidth: 1,
+    borderColor: '#D9D9D9',
+    borderRadius: 5,
+    marginVertical: 5,
     alignItems: 'center',
-    marginVertical: 20,
   },
-  avatarButton: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
+  selectedAvailability: {
     backgroundColor: '#D9D9D9',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
-  plusText: {
-    fontSize: 30,
-    color: '#000',
+  availabilityText: {
+    fontSize: 14,
+  },
+  picker: {
+    width: '100%',
+    borderWidth: 1,
+    borderColor: '#D9D9D9',
+    borderRadius: 5,
   },
   errorText: {
     color: 'red',
