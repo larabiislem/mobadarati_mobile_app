@@ -37,7 +37,7 @@ function setpasswordhandller(val) {
       });
 
       const data = await response.json();
-      
+      console.log(response.headers)
 
       if (response.ok) {
         Alert.alert('Success', 'Logged in successfully');

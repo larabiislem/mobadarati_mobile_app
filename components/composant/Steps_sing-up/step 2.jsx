@@ -8,8 +8,8 @@ import Waiter from '../../../assets/images/image 24.png';
 import Wash_Dishes from '../../../assets/images/image 25.png';
 import { KeyboardAvoidingView } from 'react-native';
 
-const SkillsSelectionScreen = ( {nav}) => {
-  const [selectedSkills, setSelectedSkills] = useState([]);
+const SkillsSelectionScreen = ( {nav, selectedSkills,setSelectedSkills}) => {
+  
   const skills = [
     { name: 'Cooking', color: '#D9D9D9' , img : Cooking},
     { name: 'Delivery', color: '#D9D9D9' ,img : Delivery },

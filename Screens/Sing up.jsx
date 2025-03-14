@@ -10,52 +10,58 @@ import SignUpScreen from '@/components/composant/Steps_sing-up/step3';
 // <Button title="Next" onPress={() => navigation.navigate('Step3')} />
 // Step 1: First Screen
 //<Button title="Next" onPress={() => navigation.navigate('Step4')} />
-const Step1 = ({ navigation }) => {
-  return (
-    <View style={styles.container}>
-      
-      <ProgressBar progress={0.3} width={300} height={10} color="#417FFC" unfilledColor = "#D9D9D9" 
-      borderWidth={0}
-      />
-      <Text style={styles.step_text}>Step 1/3</Text>
-      
-     <AccountSelectionScreen nav={navigation}/>
-    </View>
-  );
-};
+
+
+
 
 // Step 2: Second Screen
-const Step2 = ({ navigation }) => {
-  return (
-    <View style={styles.container}>
-      
-      <ProgressBar progress={0.6} width={300} height={10} color="#417FFC"unfilledColor = "#D9D9D9" 
-      borderWidth={0} />
-      <Text style={styles.step_text}>Step 2/3 </Text>
-      <SkillsSelectionScreen nav={navigation}/>
-     
-    </View>
-  );
-};
 
 // Step 3: Third Screen
-const Step3 = ({ navigation }) => {
-  return (
-    <View style={styles.container}>
-      
-      <ProgressBar progress={1} width={300} height={10} color="#417FFC" unfilledColor = "#D9D9D9" 
-      borderWidth={0} />
-      <Text style={styles.step_text} >Step 3/3</Text>
-      <SignUpScreen/>
-    </View>
-  );
-};
+
 
 
 // Create a Stack Navigator
 const Stack = createStackNavigator();
 
 const Sign_up = () => {
+  const [selectedSkills, setSelectedSkills] = useState([]);
+  const Step1 = ({ navigation }) => {
+    return (
+      <View style={styles.container}>
+        
+        <ProgressBar progress={0.3} width={300} height={10} color="#417FFC" unfilledColor = "#D9D9D9" 
+        borderWidth={0}
+        />
+        <Text style={styles.step_text}>Step 1/3</Text>
+        
+       <AccountSelectionScreen nav={navigation} />
+      </View>
+    );
+  };
+  const Step2 = ({ navigation }) => {
+    return (
+      <View style={styles.container}>
+        
+        <ProgressBar progress={0.6} width={300} height={10} color="#417FFC"unfilledColor = "#D9D9D9" 
+        borderWidth={0} />
+        <Text style={styles.step_text}>Step 2/3 </Text>
+        <SkillsSelectionScreen nav={navigation} selectedSkills={selectedSkills}  setSelectedSkills=
+       {setSelectedSkills}/>
+       
+      </View>
+    );
+  };
+  const Step3 = ({ navigation }) => {
+    return (
+      <View style={styles.container}>
+        
+        <ProgressBar progress={1} width={300} height={10} color="#417FFC" unfilledColor = "#D9D9D9" 
+        borderWidth={0} />
+        <Text style={styles.step_text} >Step 3/3</Text>
+        <SignUpScreen selectedSkills={selectedSkills}/>
+      </View>
+    );
+  };
   return (
     
       <Stack.Navigator screenOptions={{headerShown:false}}>
