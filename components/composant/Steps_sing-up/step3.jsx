@@ -16,10 +16,16 @@ const SignUpScreen = ({ selectedSkills }) => {
     city:''
   });
 
-
+  const {name,phone,email,password,national_card_number,city ,volunteerType} = formState;
   console.log(JSON.stringify({
     selectedSkills,
-    formState,
+          name,
+          phone,
+          email,
+          password,
+          national_card_number,
+          city,
+          volunteerType,
   }))
 
   const [isAdult, setIsAdult] = useState(false);
@@ -47,14 +53,24 @@ const SignUpScreen = ({ selectedSkills }) => {
     }
 
     try {
+
+        const {name,phone,email,password,national_card_number,city ,volunteerType} = formState;
       const response = await fetch('https://mobadaraty-production.up.railway.app/api/v1/auth/volunteer/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+          email,
+          password,
+          phone,
+          name,
+          national_card_number,
           selectedSkills,
-          formState,
+          city,
+          volunteerType,
+
+
         }),
       });
 
