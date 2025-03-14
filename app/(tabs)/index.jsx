@@ -3,7 +3,7 @@ import Sign_up from "@/Screens/Sing up";
 import { createStackNavigator } from "@react-navigation/stack";
 import Login_screen from "@/Screens/login";
 import VolunteerMap from "@/Screens/map";
-import VolunteerCard from "@/components/composant/assosiation";
+import VolunteerCard from "@/components/composant/assosiation_offer";
 
 /*
  <Stack.Navigator screenOptions={{headerShown:false}}>
@@ -17,9 +17,6 @@ export default function App() {
   return (
     <View style={styles.container}>
      
-       
-     <VolunteerCard/>
-
     </View>
    
   );

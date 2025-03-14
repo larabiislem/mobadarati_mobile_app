@@ -15,6 +15,7 @@ const VolunteerCard = () => {
       </View>
       <Text style={styles.title}>Volunteer at Mat3am Rahma</Text>
       <View style={styles.details}>
+        <View>
         <View style={styles.detailRow}>
           <MaterialIcons name="event" size={16} color="#666" />
           <Text style={styles.detailText}>Sun. 11/2025</Text>
@@ -23,14 +24,20 @@ const VolunteerCard = () => {
           <FontAwesome5 name="clock" size={16} color="#666" />
           <Text style={styles.detailText}>4hours shift</Text>
         </View>
+
+        </View>
+        <FontAwesome5 name="tasks" size={25} color="black" />
+        <View style={styles.leftdetail}>
         <View style={styles.detailRow}>
-        <FontAwesome5 name="tasks" size={16} color="black" />
+        
           <Text style={styles.detailText}>Start 09pm</Text>
         </View>
         <View style={styles.detailRow}>
-          <FontAwesome5 name="clock" size={16} color="red" />
           <Text style={styles.detailText}>End 12am</Text>
         </View>
+
+        </View>
+        
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.requestButton}>
@@ -82,10 +89,13 @@ const styles = StyleSheet.create({
   },
   details: {
     marginTop: 10,
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center'
+    
   },
   detailRow: {
     flexDirection: 'row',
-    alignItems: 'center',
     marginVertical: 3,
   },
   detailText: {
@@ -112,6 +122,10 @@ const styles = StyleSheet.create({
     color: 'red',
     fontWeight: 'bold',
   },
+  leftdetail:{
+    marginLeft:-15
+
+  }
 });
 
 export default VolunteerCard;
