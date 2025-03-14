@@ -73,7 +73,7 @@ const SignUpScreen = ({ selectedSkills }) => {
 
   return (
     <View style={styles.container}>
-        <ScrollView>
+        
 
         
       <View style={styles.avatarContainer}>
@@ -81,7 +81,7 @@ const SignUpScreen = ({ selectedSkills }) => {
           <Text style={styles.plusText}>+</Text>
         </TouchableOpacity>
       </View>
-
+      <ScrollView>
       {/* Champs de texte avec gestion centralisée */}
       <Input name="Name" value={formState.name} handller={(value) => handleInputChange('name', value)} />
       <Input name="Email" value={formState.email} handller={(value) => handleInputChange('email', value)} />
@@ -138,76 +138,90 @@ const SignUpScreen = ({ selectedSkills }) => {
   );
 };
 
-// Les styles restent les mêmes
 const styles = StyleSheet.create({
     container: {
       flex: 1,
+      alignItems: 'center',
+      backgroundColor: '#fff',
       padding: 20,
-      justifyContent: 'center',
+    },
+    stepText: {
+      color: '#4169E1',
+      marginTop: 5,
     },
     avatarContainer: {
       alignItems: 'center',
-      marginBottom: 20,
+      marginVertical: 20,
     },
     avatarButton: {
-      width: 100,
-      height: 100,
-      borderRadius: 50,
-      backgroundColor: '#ccc',
+      width: 80,
+      height: 80,
+      borderRadius: 40,
+      backgroundColor: '#D9D9D9',
       justifyContent: 'center',
       alignItems: 'center',
     },
     plusText: {
-      fontSize: 24,
-      color: '#fff',
+      fontSize: 30,
+      color: '#000',
     },
     errorText: {
       color: 'red',
       fontSize: 12,
+      marginTop: 5,
     },
     checkboxContainer: {
       flexDirection: 'row',
       alignItems: 'center',
-      marginVertical: 10,
+      marginVertical: 5,
     },
     checkboxText: {
       marginLeft: 10,
+      fontSize: 14,
     },
     policyText: {
-      color: 'blue',
+      color: 'green',
+      fontWeight: 'bold',
     },
     signUpButton: {
-      backgroundColor: '#007bff',
+      backgroundColor: 'green',
       padding: 15,
-      borderRadius: 5,
+      borderRadius: 10,
+      marginVertical: 10,
+      width: '90%',
       alignItems: 'center',
-      marginTop: 20,
     },
     signUpText: {
       color: '#fff',
       fontSize: 16,
+      fontWeight: 'bold',
     },
     orText: {
-      textAlign: 'center',
       marginVertical: 10,
+      fontSize: 14,
     },
     googleButton: {
-      backgroundColor: '#db4437',
+      backgroundColor: '#fff',
       padding: 15,
-      borderRadius: 5,
+      borderRadius: 10,
+      width: '90%',
+      borderWidth: 1,
+      borderColor: '#D9D9D9',
       alignItems: 'center',
     },
     googleText: {
-      color: '#fff',
       fontSize: 16,
+      fontWeight: 'bold',
+      color: '#000',
     },
     signInText: {
-      textAlign: 'center',
       marginTop: 20,
+      fontSize: 14,
     },
     signInLink: {
-      color: '#007bff',
+      color: '#FFA500',
+      fontWeight: 'bold',
     },
-  });
   
-export default SignUpScreen;
+  });
+  export default SignUpScreen;
