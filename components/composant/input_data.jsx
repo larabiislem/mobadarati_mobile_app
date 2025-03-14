@@ -1,6 +1,6 @@
 import { View , TextInput ,StyleSheet , Text} from "react-native";
 
-export default function Input({name}) {
+export default function Input({name,handller}) {
 
    let secure = false 
    if (name ==='Password') {secure =true}
@@ -8,6 +8,7 @@ export default function Input({name}) {
         <View style={styles.input_container}>
             <TextInput  style={styles.text_input} placeholder={name} placeholderTextColor="#484D53"
              secureTextEntry={secure}
+             onChangeText={handller}
             />
         </View>
     );
