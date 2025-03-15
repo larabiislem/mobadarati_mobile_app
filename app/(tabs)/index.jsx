@@ -8,6 +8,7 @@ import Home from "@/Screens/home";
 import DonationCard from "@/components/Donation_offer";
 import Donationscreen from "@/Screens/donation";
 import DonationDetails from "@/Screens/donation_details";
+import PaymentPopup from "@/Screens/payment_donate";
 /*
  <Stack.Navigator screenOptions={{headerShown:false}}>
         <Stack.Screen name="Login" component={Login_screen} />
@@ -21,7 +22,7 @@ export default function App() {
   return (
     
    <View style={styles.container}>
-    <DonationDetails/>
+    <Main/>
     
     </View>
    

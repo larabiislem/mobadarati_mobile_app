@@ -23,9 +23,9 @@ const Donationscreen = () => {
       {/* Section Money Donations */}
       <Text style={styles.sectionTitle}>Money Donations 💰</Text>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.horizontalScroll}>
-        <DonationCard />
-        <DonationCard />
-        <DonationCard />
+        <DonationCard handller={()=>navigation.navigate("Donation_details")}/>
+        <DonationCard handller={()=>navigation.navigate("Donation_details")}/>
+        <DonationCard handller={()=>navigation.navigate("Donation_details")}/>
       </ScrollView>
 
       {/* Section Items Donations */}

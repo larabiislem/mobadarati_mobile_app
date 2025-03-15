@@ -5,6 +5,7 @@ import { View, Text, Image, TextInput, TouchableOpacity, StyleSheet } from 'reac
 import VolunteerMap from './map';
 import HomeScreen from './home';
 import Donationscreen from './donation';
+import DonationDetails from './donation_details';
 import { FontAwesome, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 const CustomHeader = () => {
@@ -46,6 +47,7 @@ const HomeStack = () => (
   <Stack.Navigator>
     <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
     <Stack.Screen name="Donate" component={Donationscreen} options={{headerShown: false}}  />
+    <Stack.Screen name="Donation_details" component={DonationDetails} options={{headerShown: false}}  />
   </Stack.Navigator>
 );
 

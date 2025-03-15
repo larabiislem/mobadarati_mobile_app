@@ -1,44 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { FontAwesome, Ionicons } from '@expo/vector-icons';
+import PaymentPopup from '../Screens/payment_donate';
 
-const DonationCard = () => {
- 
+const DonationCard = ({handller}) => {
+  const [isPopupVisible, setPopupVisible] = useState(false);
 
   return (
-    <View style={styles.card}>
-      {/* Image */}
-      <Image source={require('../assets/images/image 89.png')} style={styles.image} />
+    <TouchableOpacity onPress={handller}>
+      <View style={styles.card}>
+        {/* Image */}
+        <Image source={require('../assets/images/image 89.png')} style={styles.image} />
 
-      {/* Texte */}
-      <View style={styles.content}>
-        <Text style={styles.title}>Helping elderly to get their Medical needs</Text>
-        <Text style={styles.description}>
-          We raised money to help more than 600 elderly that needed to get medicines and we covered their bills.
-        </Text>
+        {/* Texte */}
+        <View style={styles.content}>
+          <Text style={styles.title}>Helping elderly to get their Medical needs</Text>
+          <Text style={styles.description}>
+            We raised money to help more than 600 elderly that needed to get medicines and we covered their bills.
+          </Text>
 
-        
+          {/* Montant collecté */}
+          <Text style={styles.amount}>52,650 / 70,000 DA</Text>
 
-        {/* Montant collecté */}
-        <Text style={styles.amount}>52,650 / 70,000 DA</Text>
-
-        {/* Bouton et icônes */}
-        <View style={styles.bottomRow}>
-          <TouchableOpacity style={styles.donateButton}>
-            <Text style={styles.donateText}>Donate</Text>
-          </TouchableOpacity>
-
-          <View style={styles.icons}>
-            <TouchableOpacity style={styles.icon}>
-              <Ionicons name="bookmark-outline" size={20} color="black" />
+          {/* Bouton et icônes */}
+          <View style={styles.bottomRow}>
+            <TouchableOpacity style={styles.donateButton} onPress={() => setPopupVisible(true)}>
+              <Text style={styles.donateText}>Donate</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.icon}>
-              <FontAwesome name="share-alt" size={20} color="black" />
-            </TouchableOpacity>
+
+            <View style={styles.icons}>
+              <TouchableOpacity style={styles.icon}>
+                <Ionicons name="bookmark-outline" size={20} color="black" />
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.icon}>
+                <FontAwesome name="share-alt" size={20} color="black" />
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </View>
-    </View>
+      {/* Payment Popup */}
+      <PaymentPopup visible={isPopupVisible} onClose={() => setPopupVisible(false)} />
+    </TouchableOpacity>
   );
 };
 
