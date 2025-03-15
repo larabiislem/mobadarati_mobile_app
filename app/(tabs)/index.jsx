@@ -2,8 +2,9 @@ import { View , StyleSheet} from "react-native";
 import Sign_up from "@/Screens/Sing up";
 import { createStackNavigator } from "@react-navigation/stack";
 import { SafeAreaView } from 'react-native';
-import Home from "@/Screens/home";
+import Main from "@/Screens/main";
 import TopServices from "@/components/composant/TopService";
+import Home from "@/Screens/home";
 /*
  <Stack.Navigator screenOptions={{headerShown:false}}>
         <Stack.Screen name="Login" component={Login_screen} />
@@ -16,7 +17,8 @@ export default function App() {
   return (
     
    <View style={styles.container}>
-    <Home/>
+    <Main/>
+    
     </View>
    
     

@@ -61,6 +61,8 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
     shadowOffset: { width: 0, height: 3 },
     width: 250,
+    height:250,
+    margin: 10,
   },
   image: {
     width: '100%',
