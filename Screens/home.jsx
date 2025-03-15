@@ -1,12 +1,13 @@
-import { View , StyleSheet , Pressable, Image} from "react-native";
+import { View , StyleSheet ,TouchableOpacity, Image} from "react-native";
 import TopServices from "@/components/composant/TopService";
 import VolunteerCard from "@/components/composant/assosiation_offer";
 import { ScrollView } from "react-native";
 import donate from '../assets/images/Group 84 (1).png'
-
+import { useNavigation } from "expo-router";
 
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
   return (
     
         
@@ -25,7 +26,11 @@ const HomeScreen = () => {
     
     
       </View>
+      <TouchableOpacity onPress={()=>navigation.navigate('Donate')}>
       <Image source={donate} style={{margin:40}}/>
+       
+      </TouchableOpacity>
+      
       </ScrollView>
       
     </View>

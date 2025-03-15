@@ -1,16 +1,14 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 import { View, Text, Image, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import VolunteerMap from './map';
 import HomeScreen from './home';
-
+import Donationscreen from './donation';
 import { FontAwesome, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 const CustomHeader = () => {
   return (
-    
-
-   
     <View style={styles.header}>
       <View style={styles.topRow}>
         <View style={styles.userInfo}>
@@ -36,18 +34,24 @@ const CustomHeader = () => {
         </TouchableOpacity>
       </View>
     </View>
-
   );
 };
 
-const HomeScreenview = ()=> <HomeScreen/>
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 const ProfileScreen = () => <View style={styles.screen}><Text>Home Screen</Text></View>;
 
-const Tab = createBottomTabNavigator();
+
+const HomeStack = () => (
+  <Stack.Navigator>
+    <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+    <Stack.Screen name="Donate" component={Donationscreen} options={{headerShown: false}}  />
+  </Stack.Navigator>
+);
 
 export default function Main() {
   return (
-    
+   
     <Tab.Navigator
     screenOptions={{
       header: () => <CustomHeader />,
@@ -58,7 +62,7 @@ export default function Main() {
   >   
 <Tab.Screen 
       name="Home" 
-      component={HomeScreenview} 
+      component={HomeStack} 
       options={{ 
         tabBarIcon: ({ color, size }) => (<Ionicons name="home-outline" color={color} size={size} />) 
       }} 
@@ -79,7 +83,7 @@ export default function Main() {
       }} 
     />
       </Tab.Navigator>
-    
+   
   );
 }
 
