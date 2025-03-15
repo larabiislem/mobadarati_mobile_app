@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-native';
 import Main from "@/Screens/main";
 import TopServices from "@/components/composant/TopService";
 import Home from "@/Screens/home";
+import DonationCard from "@/components/Donation_offer";
 /*
  <Stack.Navigator screenOptions={{headerShown:false}}>
         <Stack.Screen name="Login" component={Login_screen} />
@@ -17,7 +18,7 @@ export default function App() {
   return (
     
    <View style={styles.container}>
-    <Main/>
+   <DonationCard/>
     
     </View>
    

@@ -40,7 +40,7 @@ const CustomHeader = () => {
   );
 };
 
-const homeScreen = ()=> <HomeScreen/>
+const HomeScreenview = ()=> <HomeScreen/>
 const ProfileScreen = () => <View style={styles.screen}><Text>Home Screen</Text></View>;
 
 const Tab = createBottomTabNavigator();
@@ -58,7 +58,7 @@ export default function Main() {
   >   
 <Tab.Screen 
       name="Home" 
-      component={homeScreen} 
+      component={HomeScreenview} 
       options={{ 
         tabBarIcon: ({ color, size }) => (<Ionicons name="home-outline" color={color} size={size} />) 
       }} 
