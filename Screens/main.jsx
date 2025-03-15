@@ -8,6 +8,7 @@ import Donationscreen from './donation';
 import DonationDetails from './donation_details';
 import { FontAwesome, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
+
 const CustomHeader = () => {
   return (
     <View style={styles.header}>
@@ -40,7 +41,8 @@ const CustomHeader = () => {
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-const ProfileScreen = () => <View style={styles.screen}><Text>Home Screen</Text></View>;
+const ProfileScreen = () => <View style={styles.screen}><Text>Profile</Text></View>;
+const Qr_code = () => <View style={styles.screen}><Text>Qr code</Text></View>;
 
 
 const HomeStack = () => (
@@ -82,6 +84,13 @@ export default function Main() {
       component={ProfileScreen} 
       options={{ 
         tabBarIcon: ({ color, size }) => (<Ionicons name="person-outline" color={color} size={size} />)
+      }} 
+    />
+     <Tab.Screen 
+      name="Qrcode" 
+      component={Qr_code} 
+      options={{ 
+        tabBarIcon: ({ color, size }) => (<Ionicons name="qr-code-outline" size={size} color={color} />)
       }} 
     />
       </Tab.Navigator>
