@@ -1,10 +1,9 @@
 import { View , StyleSheet} from "react-native";
 import Sign_up from "@/Screens/Sing up";
 import { createStackNavigator } from "@react-navigation/stack";
-import Login_screen from "@/Screens/login";
-import VolunteerMap from "@/Screens/map";
-import VolunteerCard from "@/components/composant/assosiation_offer";
-
+import { SafeAreaView } from 'react-native';
+import Home from "@/Screens/home";
+import TopServices from "@/components/composant/TopService";
 /*
  <Stack.Navigator screenOptions={{headerShown:false}}>
         <Stack.Screen name="Login" component={Login_screen} />
@@ -15,9 +14,12 @@ import VolunteerCard from "@/components/composant/assosiation_offer";
  //const Stack = createStackNavigator();
 export default function App() {
   return (
-    <View style={styles.container}>
-     
+    
+   <View style={styles.container}>
+    <Home/>
     </View>
+   
+    
    
   );
 }
