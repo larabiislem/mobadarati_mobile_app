@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
-import { FontAwesome5, MaterialIcons } from '@expo/vector-icons';
+import { FontAwesome5} from '@expo/vector-icons';
 import Assotiation_pic from '../../assets/images/image 43.png'
 
  
-const VolunteerCard = () => {
+const VolunteerCard = ({name,skills,distance,address}) => {
   return (
     <View style={styles.card}>
 
@@ -13,28 +13,17 @@ const VolunteerCard = () => {
         <FontAwesome5 name="map-marker-alt" size={14} color="white" />
         <Text style={styles.locationText}>Alger</Text>
       </View>
-      <Text style={styles.title}>Volunteer at Mat3am Rahma</Text>
+      <Text style={styles.title}>{name}</Text>
       <View style={styles.details}>
         <View>
         <View style={styles.detailRow}>
-          <MaterialIcons name="event" size={16} color="#666" />
-          <Text style={styles.detailText}>Sun. 11/2025</Text>
+          <Text style={styles.detailText}>{address}</Text>
         </View>
         <View style={styles.detailRow}>
-          <FontAwesome5 name="clock" size={16} color="#666" />
-          <Text style={styles.detailText}>4hours shift</Text>
+          <Text style={styles.detailText}>{distance}KM</Text>
         </View>
 
-        </View>
-        <FontAwesome5 name="tasks" size={25} color="black" />
-        <View style={styles.leftdetail}>
-        <View style={styles.detailRow}>
-        
-          <Text style={styles.detailText}>Start 09pm</Text>
-        </View>
-        <View style={styles.detailRow}>
-          <Text style={styles.detailText}>End 12am</Text>
-        </View>
+  
 
         </View>
         
@@ -124,10 +113,7 @@ const styles = StyleSheet.create({
     color: 'red',
     fontWeight: 'bold',
   },
-  leftdetail:{
-    marginLeft:-15
 
-  }
 });
 
 export default VolunteerCard;

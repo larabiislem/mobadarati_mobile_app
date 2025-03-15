@@ -46,7 +46,7 @@ const VolunteerMap = () => {
               return null;
             }
 
-            console.log(`Rendering Marker: ${location.name}`, location.coordinates);
+            
 
             return (
               <Marker

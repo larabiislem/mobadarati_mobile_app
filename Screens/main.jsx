@@ -45,7 +45,7 @@ const ProfileScreen = () => <View style={styles.screen}><Text>Home Screen</Text>
 
 const HomeStack = () => (
   <Stack.Navigator>
-    <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+    <Stack.Screen name="Home2" component={HomeScreen} options={{ headerShown: false }} />
     <Stack.Screen name="Donate" component={Donationscreen} options={{headerShown: false}}  />
     <Stack.Screen name="Donation_details" component={DonationDetails} options={{headerShown: false}}  />
   </Stack.Navigator>

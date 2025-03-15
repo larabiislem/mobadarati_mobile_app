@@ -4,6 +4,8 @@ import Input from "@/components/composant/input_data";
 import PrimaryButton from "@/components/composant/Sing in Button";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 export default function Login_screen() {
   const Navigator = useNavigation();
@@ -22,30 +24,27 @@ function setpasswordhandller(val) {
 
 
 
+  
+ 
   const handleLogin = async () => {
-    
     try {
       const response = await fetch('https://mobadaraty-production.up.railway.app/api/v1/auth/login', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
       });
-
+      
       const data = await response.json();
-      console.log(response.headers)
-
       if (response.ok) {
-        Alert.alert('Success', 'Logged in successfully');
+        await AsyncStorage.setItem('accessToken', data.token); console.log(data)
+        
+        Navigator.navigate('Main');
+
       } else {
         Alert.alert('Error', data.message || 'Invalid credentials');
       }
     } catch (error) {
-      Alert.alert('Error', 'Network error');
+      Alert.alert('Error', error);
     }
   };
 
