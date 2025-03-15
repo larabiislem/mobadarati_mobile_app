@@ -20,7 +20,7 @@ const VolunteerCard = ({name,skills,distance,address}) => {
           <Text style={styles.detailText}>{address}</Text>
         </View>
         <View style={styles.detailRow}>
-          <Text style={styles.detailText}>{distance}KM</Text>
+          <Text style={styles.detailDis}>{distance} KM</Text>
         </View>
 
   
@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     marginTop: 10,
+    marginLeft:10
   },
   details: {
     marginTop: 10,
@@ -90,8 +91,12 @@ const styles = StyleSheet.create({
     marginVertical: 3,
   },
   detailText: {
-    marginLeft: 5,
+    marginLeft: 10,
     color: '#666',
+  },
+  detailDis: {
+    marginLeft: 10,
+   fontWeight:'bold',
   },
   buttonContainer: {
     marginTop: 10,

@@ -70,43 +70,9 @@ export default function HomeScreen ()
     fetchLocations();
   }, []);
 //
-const data1 = [
-  {
-      "locationId": "67d4e4bbc5eeb5202f4c5e15",
-      "associationId": "67d4e4bac5eeb5202f4c5e13",
-      "distance_km": 4.08,
-      "skills_matched": [
-          "Organization"
-      ]
-  },
-  {
-      "locationId": "67d4e7115f4068e3e05ab504",
-      "associationId": "67d4e7105f4068e3e05ab502",
-      "distance_km": 4.19,
-      "skills_matched": [
-          "Cooking"
-      ]
-  },
-  {
-      "locationId": "67d4e6065f4068e3e05ab4ce",
-      "associationId": "67d4e6035f4068e3e05ab4cb",
-      "distance_km": 5.7,
-      "skills_matched": [
-          "Organization"
-      ]
-  },
-  {
-      "locationId": "67d4e6065f4068e3e05ab4cf",
-      "associationId": "67d4e6035f4068e3e05ab4cb",
-      "distance_km": 6.51,
-      "skills_matched": [
-          "Organization"
-      ]
-  }
-];
 
 useEffect(()=>{
-  
+  const data1 = invites;
   const data2=locations;
   const combinedData = data1.map(invite => {
     const locationMatch = data2.find(loc => loc.locationId === invite.locationId);
