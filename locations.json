@@ -1,0 +1,90 @@
+[
+	{
+		"locationId": "67d4e4bbc5eeb5202f4c5e15",
+		"associationId": "67d4e4bac5eeb5202f4c5e13",
+		"skills": [
+			"Transportation",
+			"Organization"
+		],
+		"requiredVolunteers": 4,
+		"currentVolunteers": 0,
+		"coordinates": [
+			36.7024722,
+			3.0801951
+		]
+	},
+	{
+		"locationId": "67d4e6065f4068e3e05ab4cd",
+		"associationId": "67d4e6035f4068e3e05ab4cb",
+		"skills": [
+			"Transportation",
+			"Cooking",
+			"Decorating"
+		],
+		"requiredVolunteers": 12,
+		"currentVolunteers": 0,
+		"coordinates": [
+			36.793240113318475,
+			3.0506175445847785
+		]
+	},
+	{
+		"locationId": "67d4e6065f4068e3e05ab4ce",
+		"associationId": "67d4e6035f4068e3e05ab4cb",
+		"skills": [
+			"Transportation",
+			"Organization",
+			"Decorating"
+		],
+		"requiredVolunteers": 15,
+		"currentVolunteers": 0,
+		"coordinates": [
+			36.74853945,
+			3.0759318861461464
+		]
+	},
+	{
+		"locationId": "67d4e6065f4068e3e05ab4cf",
+		"associationId": "67d4e6035f4068e3e05ab4cb",
+		"skills": [
+			"Transportation",
+			"Organization",
+			"Decorating"
+		],
+		"requiredVolunteers": 5,
+		"currentVolunteers": 0,
+		"coordinates": [
+			36.765628923691764,
+			3.0166992871190264
+		]
+	},
+	{
+		"locationId": "67d4e7115f4068e3e05ab504",
+		"associationId": "67d4e7105f4068e3e05ab502",
+		"skills": [
+			"Shopping",
+			"Decorating",
+			"Cooking"
+		],
+		"requiredVolunteers": 20,
+		"currentVolunteers": 0,
+		"coordinates": [
+			36.697897039349165,
+			3.0800765625861253
+		]
+	},
+	{
+		"locationId": "67d4e7115f4068e3e05ab505",
+		"associationId": "67d4e7105f4068e3e05ab502",
+		"skills": [
+			"Transportation",
+			"Cooking"
+		],
+		"requiredVolunteers": 9,
+		"currentVolunteers": 0,
+		"coordinates": [
+			36.765628923691764,
+			3.0166992871190264
+		]
+	}
+]
