@@ -9,20 +9,20 @@ const DonationCard = ({handller}) => {
   return (
     <TouchableOpacity onPress={handller}>
       <View style={styles.card}>
-        {/* Image */}
+        
         <Image source={require('../assets/images/image 89.png')} style={styles.image} />
 
-        {/* Texte */}
+       
         <View style={styles.content}>
           <Text style={styles.title}>Helping elderly to get their Medical needs</Text>
           <Text style={styles.description}>
             We raised money to help more than 600 elderly that needed to get medicines and we covered their bills.
           </Text>
 
-          {/* Montant collecté */}
+        
           <Text style={styles.amount}>52,650 / 70,000 DA</Text>
 
-          {/* Bouton et icônes */}
+         
           <View style={styles.bottomRow}>
             <TouchableOpacity style={styles.donateButton} onPress={() => setPopupVisible(true)}>
               <Text style={styles.donateText}>Donate</Text>
@@ -39,7 +39,7 @@ const DonationCard = ({handller}) => {
           </View>
         </View>
       </View>
-      {/* Payment Popup */}
+      
       <PaymentPopup visible={isPopupVisible} onClose={() => setPopupVisible(false)} />
     </TouchableOpacity>
   );

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import ProgressBar from 'react-native-progress/Bar'; // Importing ProgressBar from react-native-progress
-import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import AccountSelectionScreen from '@/components/composant/Steps_sing-up/step 1';
 import SkillsSelectionScreen from '@/components/composant/Steps_sing-up/step 2';
 import SignUpScreen from '@/components/composant/Steps_sing-up/step3';
+import { useNavigation } from 'expo-router';
 //<Button title="Next" onPress={() => navigation.navigate('Step2')}
 // <Button title="Next" onPress={() => navigation.navigate('Step3')} />
 // Step 1: First Screen

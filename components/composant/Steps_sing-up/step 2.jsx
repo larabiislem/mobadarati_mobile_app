@@ -7,6 +7,7 @@ import Delivery from '../../../assets/images/image 23.png';
 import Waiter from '../../../assets/images/image 24.png';
 import Wash_Dishes from '../../../assets/images/image 25.png';
 import { KeyboardAvoidingView } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const SkillsSelectionScreen = ( {nav, selectedSkills,setSelectedSkills}) => {
   
@@ -27,6 +28,9 @@ const SkillsSelectionScreen = ( {nav, selectedSkills,setSelectedSkills}) => {
 
   return (
     <View style={styles.container}>
+       <TouchableOpacity style={styles.backButton} onPress={() => nav.goBack()}>
+        <Ionicons name="arrow-back" size={24} color="black" />
+      </TouchableOpacity>
         
       < Title >Your skills</Title>
       <Text style={styles.subtitle}>Select your skills</Text>
@@ -130,7 +134,13 @@ const styles = StyleSheet.create({
     alignItems:'center',
     
 
-  }
+  },
+  backButton: {
+    position: 'absolute',
+    top: 0,
+    left: 10,
+    zIndex: 10,
+  },
 });
 
 export default SkillsSelectionScreen;

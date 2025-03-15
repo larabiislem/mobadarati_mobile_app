@@ -1,18 +1,10 @@
 import { View , StyleSheet, Image} from "react-native";
 import Sign_up from "@/Screens/Sing up";
 import { createStackNavigator } from "@react-navigation/stack";
-import { SafeAreaView } from 'react-native';
 import Main from "@/Screens/main";
 import Login_screen from "@/Screens/login";
 
- 
-/*
 
-    
-
-*/
-//
-//Mobadaraty – Figma et 2 pages de plus - Profil 1 – Microsoft_ Edge 15_03_2025 11_13_12 AM.png
  const Stack = createStackNavigator();
 export default function App() {
   return (

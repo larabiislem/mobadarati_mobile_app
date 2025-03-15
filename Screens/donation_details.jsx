@@ -10,7 +10,7 @@ const DonationDetails = () => {
 
     return (
         <View style={styles.container}>
-            {/* Header avec icônes */}
+            
             <View style={styles.header}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
                     <Ionicons name="arrow-back" size={24} color="black" />
@@ -20,21 +20,21 @@ const DonationDetails = () => {
                 </TouchableOpacity>
             </View>
             <View style={styles.detailcontainer}>
-                {/* Image principale */}
+               
                 <Image source={require('../assets/images/image 89.png')} style={styles.image} />
-                {/* Détails du don */}
+               
                 <Text style={styles.title}>Helping elderly to get their Medical needs</Text>
-                {/* Description */}
+               
                 <Text style={styles.description}>
                     We raised money to help more than 600 elderly that needed to get medicines and we covered their bills.
                     <Text style={styles.readMore}> Read more</Text>
                 </Text>
-                {/* Bouton Donate */}
+               
                 <TouchableOpacity style={styles.donateButton} onPress={() => setPopupVisible(true)}>
                     <Text style={styles.donateText}>Donate</Text>
                 </TouchableOpacity>
             </View>
-            {/* Payment Popup */}
+           
             <PaymentPopup visible={isPopupVisible} onClose={() => setPopupVisible(false)} />
         </View>
     );
