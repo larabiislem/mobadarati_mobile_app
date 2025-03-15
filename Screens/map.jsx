@@ -1,126 +1,72 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
-import { Card, ListItem } from 'react-native-elements';
-/*
- <Card containerStyle={styles.card}>
-        <Card.Title>Volunteer Locations</Card.Title>
-        <Card.Divider />
-        {locations.map((location, index) => (
-          <ListItem key={index} bottomDivider>
-            <ListItem.Content>
-              <ListItem.Title>{location.associationId}</ListItem.Title>
-              <ListItem.Subtitle>
-                Volunteers: {location.currentVolunteers}/{location.requiredVolunteers}
-              </ListItem.Subtitle>
-            </ListItem.Content>
-          </ListItem>
-        ))}
-      </Card>
 
-*/
 
 const locations = [
-	{
-		"locationId": "67d4c6d0a1f55e61aa451488",
-		"associationId": "67d4c6cea1f55e61aa451486",
-		"coordinates": [
-			36.7014097,
-			3.2293304654793413
-		],
-		"name": "helping10",
-		"address": "Aéroport international d'Alger Houari Boumédiene, Alger, Algérie"
-	},
-	{
-		"locationId": "67d4c6d0a1f55e61aa451489",
-		"associationId": "67d4c6cea1f55e61aa451486",
-		"coordinates": [
-			36.697897039349165,
-			3.0800765625861253
-		],
-		"name": "helping10",
-		"address": "Rue des Grossistes, Djasr Kasentina"
-	},
-	{
-		"locationId": "67d4c800a1f55e61aa451493",
-		"associationId": "67d4c7fea1f55e61aa451491",
-		"coordinates": [
-			36.7024722,
-			3.0801951
-		],
-		"name": "helping5",
-		"address": "Djasr Kasentina"
-	},
-	{
-		"locationId": "67d4c800a1f55e61aa451494",
-		"associationId": "67d4c7fea1f55e61aa451491",
-		"coordinates": [
-			36.66979205,
-			3.1001751113197673
-		],
-		"name": "helping5",
-		"address": "Baraki alger"
-	},
-	{
-		"locationId": "67d4c816a1f55e61aa4514a1",
-		"associationId": "67d4c814a1f55e61aa45149f",
-		"coordinates": [
-			36.74601775,
-			3.0724042540842955
-		],
-		"name": "helping50",
-		"address": "Rue Mohamed Belouizdad, Alger"
-	},
-	{
-		"locationId": "67d4c816a1f55e61aa4514a2",
-		"associationId": "67d4c814a1f55e61aa45149f",
-		"coordinates": [
-			36.7441968,
-			3.07822
-		],
-		"name": "helping50",
-		"address": "N11, Belouizdad 16000"
-	},
-	{
-		"locationId": "67d4c836a1f55e61aa4514af",
-		"associationId": "67d4c834a1f55e61aa4514ad",
-		"coordinates": [
-			36.7220068,
-			3.1856291
-		],
-		"name": "helping1000",
-		"address": "Bab Ezzouar"
-	},
-	{
-		"locationId": "67d4c836a1f55e61aa4514b0",
-		"associationId": "67d4c834a1f55e61aa4514ad",
-		"coordinates": [
-			36.74601775,
-			3.0724042540842955
-		],
-		"name": "helping1000",
-		"address": "Rue Mohamed Belouizdad, Alger"
-	},
-	{
-		"locationId": "67d4c836a1f55e61aa4514b1",
-		"associationId": "67d4c834a1f55e61aa4514ad",
-		"coordinates": [
-			36.7441968,
-			3.07822
-		],
-		"name": "helping1000",
-		"address": "N11, Belouizdad 16000"
-	},
-	{
-		"locationId": "67d4c850a1f55e61aa4514c3",
-		"associationId": "67d4c84fa1f55e61aa4514c1",
-		"coordinates": [
-			36.7024722,
-			3.0801951
-		],
-		"name": "iftar",
-		"address": "Djasr Kasentina"
-	}
+    {
+        "locationId": "67d4e4bbc5eeb5202f4c5e15",
+        "associationId": "67d4e4bac5eeb5202f4c5e13",
+        "skills": [],
+        "coordinates": [
+            36.7024722,
+            3.0801951
+        ],
+        "name": "helping100",
+        "address": "Djasr Kasentina"
+    },
+    {
+        "locationId": "67d4e6065f4068e3e05ab4cd",
+        "associationId": "67d4e6035f4068e3e05ab4cb",
+        "skills": [],
+        "coordinates": [
+            36.793240113318475,
+            3.0506175445847785
+        ],
+        "name": "iftar ",
+        "address": "Boulevard Said Touati",
+        "description": "this organisation is serving iftar everyday 2",
+        "type": "Non-profit"
+    },
+    {
+        "locationId": "67d4e6065f4068e3e05ab4ce",
+        "associationId": "67d4e6035f4068e3e05ab4cb",
+        "skills": [],
+        "coordinates": [
+            36.74853945,
+            3.0759318861461464
+        ],
+        "name": "iftar ",
+        "address": "Jardin d'Essai du Hamma, Belouizdad, Alger, Algérie",
+        "description": "this organisation is serving iftar everyday 2",
+        "type": "Non-profit"
+    },
+    {
+        "locationId": "67d4e6065f4068e3e05ab4cf",
+        "associationId": "67d4e6035f4068e3e05ab4cb",
+        "skills": [],
+        "coordinates": [
+            36.765628923691764,
+            3.0166992871190264
+        ],
+        "name": "iftar ",
+        "address": "Rue Lieutenant Mohamed Benarfa, Ben Aknoun",
+        "description": "this organisation is serving iftar everyday 2",
+        "type": "Non-profit"
+    },
+    {
+        "locationId": "67d4e6695f4068e3e05ab4ec",
+        "associationId": "67d4e6695f4068e3e05ab4ea",
+        "skills": [],
+        "coordinates": [
+            36.765628923691764,
+            3.0166992871190264
+        ],
+        "name": "iftar 22",
+        "address": "Rue Lieutenant Mohamed Benarfa, Ben Aknoun",
+        "description": "this organisation is serving iftar everyday 2",
+        "type": "Non-profit"
+    }
 ];
 const VolunteerMap = () => {
   return (

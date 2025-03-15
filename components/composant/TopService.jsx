@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
     shadowOffset: { width: 0, height: 3 },
     alignItems: 'center',
-    marginTop:350
+   marginLeft:50,
+   marginRight:50
   },
   title: {
     fontSize: 18,

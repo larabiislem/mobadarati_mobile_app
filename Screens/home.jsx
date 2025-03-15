@@ -1,14 +1,17 @@
-import { View , StyleSheet } from "react-native";
+import { View , StyleSheet , Pressable, Image} from "react-native";
 import TopServices from "@/components/composant/TopService";
 import VolunteerCard from "@/components/composant/assosiation_offer";
 import { ScrollView } from "react-native";
+import donate from '../assets/images/Group 84 (1).png'
 
 
 
 const HomeScreen = () => {
   return (
-    <ScrollView>
+    
+        
     <View style={styles.container}>
+        <ScrollView showsHorizontalScrollIndicator={false} style={{overflow:'hidden'}}>
         <View style={styles.topService}>
             <TopServices />
         </View>
@@ -19,12 +22,14 @@ const HomeScreen = () => {
         <VolunteerCard />
             
         </ScrollView>
-      
-
+    
+    
       </View>
+      <Image source={donate} style={{margin:40}}/>
+      </ScrollView>
       
     </View>
-    </ScrollView>
+   
   );
 };
 
